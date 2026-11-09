@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeFit</title>
+
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Page background */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            padding: 20px;
+        }
+
+        /* Login form container */
+        center {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* BeFit heading */
+        h1 {
+            color: #11998e;
+            font-size: 38px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            text-align: left;
+            margin: 15px 0 8px;
+            color: #333;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* Input fields */
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #11998e;
+            box-shadow: 0 0 5px rgba(17, 153, 142, 0.3);
+        }
+
+        /* Login button */
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 7px;
+            background: #11998e;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #087f75;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mobile responsive styling */
+        @media (max-width: 480px) {
+            center {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 background-position="center">BeFit</h1>
+
+        <label for="phone">Phone number :</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="Enter phone number"
+               pattern="[0-9]{10}"
+               title="Enter a 10-digit phone number"
+               required>
+
+        <br><br>
+
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password"
+               placeholder="Enter password" required>
+
+        <br><br>
+
+        <button type="button" onclick="login()">Login</button>
+    </center>
+
+    <script>
+        function login() {
+            const phone = document.getElementById("phone");
+            const password = document.getElementById("password");
+
+            if (!phone.value.trim() || !password.value) {
+                alert("Please enter your phone number and password.");
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(phone.value.trim())) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+
+            alert("Input validation successful!");
+        }
+    </script>
+</body>
+</html>
+```

@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BeFit - Rules and Regulations</title>
+
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: #333;
+        }
+
+        /* Main heading */
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .brand {
+            color: white;
+            font-size: 38px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            color: #087f5b;
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        /* Rules and regulations */
+        .rules-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .rules-container p {
+            margin-bottom: 14px;
+            padding: 13px 15px;
+            background: #f4fbf7;
+            border-left: 5px solid #11998e;
+            border-radius: 5px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Acceptance checkbox */
+        .accept-section {
+            text-align: center;
+            margin-top: 25px;
+            color: white;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #087f5b;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        label {
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .button-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 32px;
+            margin: 5px 8px;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accept-button {
+            background: #087f5b;
+        }
+
+        .accept-button:hover {
+            background: #066747;
+            transform: translateY(-2px);
+        }
+
+        .reject-button {
+            background: #e53935;
+        }
+
+        .reject-button:hover {
+            background: #c62828;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile responsive design */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .brand {
+                font-size: 32px;
+            }
+
+            .page-title {
+                font-size: 21px;
+            }
+
+            .rules-container {
+                padding: 15px;
+            }
+
+            .rules-container p {
+                padding: 11px;
+                font-size: 14px;
+            }
+
+            button {
+                padding: 11px 24px;
+                margin: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="brand">BeFit</h1>
+    <h1 class="page-title">RULES AND REGULATIONS</h1>
+
+    <div class="rules-container">
+
+        <p>1. Accurate Information – Enter correct information about your workouts, steps, and daily goals.</p>
+
+        <p>2. Set Realistic Goals – Set achievable fitness goals according to your age and ability.</p>
+
+        <p>3. Regular Tracking – Update your activity and workout details regularly.</p>
+
+        <p>4. Stay Hydrated – Drink enough water during and after physical activity.</p>
+
+        <p>5. Take Rest – Allow sufficient rest and recovery between workouts.</p>
+
+        <p>6. Use Reminders Responsibly – Set reminders that fit your daily routine.</p>
+
+        <p>7. Do Not Overexercise – Stop exercising if you feel unwell, dizzy, or unusually tired and tell a trusted adult or seek medical help if needed.</p>
+
+        <p>8. Privacy &amp; Security – Keep your login credentials private and do not share your password with others.</p>
+
+        <p>9. Data Accuracy – Progress graphs and statistics are based on the information entered or recorded by the app.</p>
+
+        <p>10. Not Medical Advice – The app is for fitness tracking and does not replace advice from a qualified healthcare professional.</p>
+
+    </div>
+
+    <div class="accept-section">
+
+        <input type="checkbox" id="accept" name="accept" value="accept">
+
+        <label for="accept">I accept the rules and regulations</label>
+
+    </div>
+
+    <div class="button-section">
+
+        <a href="ACCEPT.html" id="acceptLink">
+            <button type="button" class="accept-button">Accept</button>
+        </a>
+
+        <a href="REJECT.html">
+            <button type="button" class="reject-button">Reject</button>
+        </a>
+
+    </div>
+
+    <script>
+        document.getElementById("acceptLink").addEventListener("click", function(event) {
+            const checkbox = document.getElementById("accept");
+
+            if (!checkbox.checked) {
+                event.preventDefault();
+                alert("Please accept the rules and regulations first.");
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
+
+
+
