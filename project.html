@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Activity Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>BeFit</h2>
+    <p class="tagline">Your Fitness Partner</p>
+
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('goals')">Goal Setting</button>
+    <button onclick="showSection('activity')">Activity Log</button>
+    <button onclick="showSection('progress')">Progress Graphs</button>
+    <button onclick="showSection('reminders')">Reminders</button>
+    <button onclick="showSection('profile')">Profile</button>
+</div>
+
+<div class="main">
+
+    <header>
+        <div>
+            <h1>Fitness Activity Tracker</h1>
+            <p>Track your activities. Achieve your goals.</p>
+        </div>
+        <div class="date" id="today"></div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section active">
+        <h2>Dashboard</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Daily Steps</h3>
+                <h1 id="totalSteps">0</h1>
+                <p>Steps completed</p>
+            </div>
+
+            <div class="card">
+                <h3>Workouts</h3>
+                <h1 id="totalWorkouts">0</h1>
+                <p>Activities recorded</p>
+            </div>
+
+            <div class="card">
+                <h3>Goal Progress</h3>
+                <h1 id="goalPercent">0%</h1>
+                <p>Daily goal completed</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>Daily Goal Progress</h3>
+            <div class="progress-bg">
+                <div id="progressBar"></div>
+            </div>
+            <p id="progressText">0 / 5000 steps</p>
+        </div>
+
+        <div class="panel">
+            <h3>Recent Activities</h3>
+            <div id="recentActivities"></div>
+        </div>
+    </section>
+
+    <!-- ACTIVITY LOG -->
+    <section id="activity" class="section">
+        <h2>Activity Log</h2>
+
+        <div class="panel">
+            <h3>Add New Activity</h3>
+
+            <label>Activity Type</label>
+            <select id="activityType">
+                <option>Walking</option>
+                <option>Running</option>
+                <option>Cycling</option>
+                <option>Gym</option>
+                <option>Yoga</option>
+            </select>
+
+            <label>Duration (minutes)</label>
+            <input type="number" id="duration" min="1" placeholder="Enter duration">
+
+            <label>Steps</label>
+            <input type="number" id="steps" min="0" placeholder="Enter steps">
+
+            <button class="add-btn" onclick="addActivity()">Add Activity</button>
+        </div>
+
+        <div class="panel">
+            <h3>Activity History</h3>
+            <div id="activityHistory"></div>
+        </div>
+    </section>
+
+    <!-- GOALS -->
+    <section id="goals" class="section">
+        <h2>Goal Setting</h2>
+
+        <div class="panel">
+            <h3>Set Your Daily Steps Goal</h3>
+
+            <input type="number" id="stepGoal" min="1" value="5000">
+
+            <button class="add-btn" onclick="saveGoal()">Save Goal</button>
+
+            <h3 id="goalDisplay">Your Goal: 5000 Steps</h3>
+        </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section id="progress" class="section">
+        <h2>Progress Graphs</h2>
+
+        <div class="panel">
+            <h3>Weekly Steps Progress</h3>
+            <canvas id="progressChart"></canvas>
+        </div>
+    </section>
+
+    <!-- REMINDERS -->
+    <section id="reminders" class="section">
+        <h2>Reminders</h2>
+
+        <div class="panel">
+            <h3>Set Workout Reminder</h3>
+
+            <label>Reminder Message</label>
+            <input type="text" id="reminderMessage"
+                   placeholder="Example: Time to walk">
+
+            <label>Reminder Time</label>
+            <input type="time" id="reminderTime">
+
+            <button class="add-btn" onclick="addReminder()">Set Reminder</button>
+        </div>
+
+        <div class="panel">
+            <h3>Your Reminders</h3>
+            <div id="reminderList"></div>
+        </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" class="section">
+        <h2>Profile</h2>
+
+        <div class="panel">
+            <h3>Personal Information</h3>
+
+            <label>Name</label>
+            <input type="text" id="userName" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" id="userEmail" placeholder="Enter email">
+
+            <button class="add-btn" onclick="saveProfile()">Save Profile</button>
+
+            <div id="profileInfo"></div>
+        </div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
